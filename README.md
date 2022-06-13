@@ -1,16 +1,11 @@
 # assignment
 
-A new Flutter project.
+-------------------------------
 
-## Getting Started
+### 라이브러리
+- [dotted_border](https://pub.dev/packages/dotted_border)
+- [fl_chart](https://pub.dev/packages/fl_chart)
 
-This project is a starting point for a Flutter application.
+-------------------------------
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/39526249/173240814-c2a8d3b4-6350-491c-9047-85f64f8c8b84.gif"  width="266"/>
