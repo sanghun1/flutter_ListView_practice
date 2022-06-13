@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:dotted_border/dotted_border.dart';
 
+// width를 최소 360으로 권장합니다.
+// table의 오른쪽 Column을 클릭하면 클릭 이벤트가 나옵니다.
+// '다량영양소'를 클릭하면 바 애니메이션이 다시 실행됩니다.
+// 원 그래프의 데이터를 마우스로 호버하거나 터치를 하면 터치한 데이터가 커집니다.
+
 void main() {
   runApp(MyApp());
 }
@@ -51,14 +56,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   final _offDecoration = BoxDecoration();
 
-  var _rightDecoration = [BoxDecoration(), BoxDecoration(), BoxDecoration()];
+  final _rightDecoration = [BoxDecoration(), BoxDecoration(), BoxDecoration()];
 
   var select = [true, true, true];
 
   late AnimationController _animationController;
 
   int touchedIndex = 0;
-
 
   @override
   void initState() {
@@ -73,7 +77,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
     Path customPath = Path()
       ..moveTo(size.width - 17, 5)
-      ..lineTo(size.width - 17, 590);
+      ..lineTo(size.width - 17, 668);
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
@@ -94,7 +98,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               highlightColor: Colors.white,
               onTap: () {
                 setState(() {
-                  print(size.width);
                   _animationController.reset();
                   _animationController.forward();
                 });
@@ -263,6 +266,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 });
               },
               child: Container(
+                height: 222,
                 decoration: _rightDecoration[0],
                 child: rightColumn(
                   rightTitleRow("율무밥"),
@@ -288,6 +292,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 });
               },
               child: Container(
+                height: 222,
                 decoration: _rightDecoration[1],
                 child: rightColumn(
                   rightTitleRow("열무보리비빔밥"),
@@ -313,6 +318,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 });
               },
               child: Container(
+                height: 222,
                 decoration: _rightDecoration[2],
                 child: rightColumn(
                   rightTitleRow("찹쌀땅콩밥"),
